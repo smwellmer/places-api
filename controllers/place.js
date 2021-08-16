@@ -48,7 +48,7 @@ router.get("/seed", async (req, res) => {
 router.get("/", async (Req, res) => {
     try {
       // query database for all the places
-      const places = await Place.find({});
+      const places = await Place.find([]);
       // send places as JSON
       res.json(places);
     } catch (error) {
