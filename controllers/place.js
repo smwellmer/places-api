@@ -45,11 +45,13 @@ router.get("/seed", async (req, res) => {
 });
 
 //SAM: Index Route
-router.get("/", async (Req, res) => {
+router.get("/", async (req, res) => {
     try {
       // query database for all the places
-      const places = await Place.find([]);
+      console.count()
+      const places = await Place.find({});
       // send places as JSON
+      console.count()
       res.json(places);
     } catch (error) {
       // return error as JSON with an error status
